@@ -1,11 +1,10 @@
+import style from './App.module.css';
+import { QuestionScreen } from './components/QuestionScreen';
 
-import './App.css';
 
 const App=()=> {
   return (
-    <div className="App">
-      stuff
-    </div>
+      <QuestionScreen/>
   );
 }
 

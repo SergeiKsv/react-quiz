@@ -1,0 +1,15 @@
+  body
+    {
+        background-color: lightblue;
+        font-size: 1rem;
+        height: 100%;
+        width: 100%;
+    }
+
+    .MainScreen{
+        height: 80vh;
+        width: 90vw;
+        margin: 10vh 5vw;
+        border-radius: 4vh;
+        background-color:#FAF9F8;
+    }

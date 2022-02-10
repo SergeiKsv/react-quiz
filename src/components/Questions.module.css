@@ -1,0 +1,32 @@
+.QuestionScreen{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    background-color:#db8127;
+}
+
+.QuestionWrapper{
+    background-color: #FFFF;
+    height: 95%;
+    width:  95%;
+}
+
+.leftInfoBlock{
+    border-left: thick solid #80C0E4;
+    border-radius: 1.5vh 0 0 0;
+    height: 90%;
+    max-width: 40%;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 10%; 
+    background:#80C0E4;
+    border-radius: 1vh;
+}
+.categoryName{
+    font-family: "Comic Sans MS", "Comic Sans";
+}
