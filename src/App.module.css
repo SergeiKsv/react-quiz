@@ -3,14 +3,4 @@
       background-color: #c4c4c4;
         font-size: 1rem;
         font-family: "Comic Sans MS", "Comic Sans";
-        height: 100%;
-        width: 100%;
-    }
-
-    .MainScreen{
-        height: 80vh;
-        width: 90vw;
-        margin: 10vh 5vw;
-        border-radius: 4vh;
-        background-color:#FAF9F8;
     }

@@ -1,10 +1,7 @@
 .QuestionScreen{
-    position: absolute;
-    margin-top: 50px;
     display: flex;
-    gap: 10%;
-    height: 80%;
-    width: 100%;
+    margin: auto;
+    padding:25px;
     background-color:#FFF;
 }
 
@@ -13,10 +10,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px 0 0 0;
-    margin-top: 25px;
-    margin-left: 25px;
-    height: 90%;
-    width: 30%;
+    flex: 0 0 calc(40% - 25px);
+    margin-right: 25px;
 }
 
 .question{
@@ -33,10 +28,8 @@
 }
 
 .rightInfoBlock{
-    margin-top: 25px;
-    margin-right: 25px;
-    height: 90%;
-    width: 60%;
+    flex: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -46,19 +39,32 @@
 {
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 20px;
+    
 }
 
 .answer
 {
     box-shadow: 0 1px 0 0  #dce1e6, 0 0 0 1px  #e7e8ec;
     background-color: #abdaf5;
-    margin: 10px;
     height: 52px;
     width: 155px;
     border-radius: 4px;
     font-family: "Comic Sans MS", "Comic Sans";
     align-self: center;
+}
+
+.answers{
+    margin-bottom: 10px;
+}
+.answers:last-child{
+    margin-bottom: 0;
+}
+
+
+.answer:last-child{
+
+    margin-right: 0;
 }
 
 .answer:hover{
@@ -68,8 +74,12 @@
 
 .questionControlGroup{
     display: flex;
-    margin-top: auto;
-    margin-left: auto;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.questionControl{
+    margin-right: 10px;
 }
 
 .header{
@@ -77,10 +87,28 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 10%; 
+    height: 40px;
     background:#80C0E4;
-    border-radius: 1vh;
+    border-radius: 7px;
 }
 
+@media screen and (max-width:440px) {
+    .QuestionScreen{
+        flex-direction: column;
+    }
 
+    .leftInfoBlock{
+        margin-bottom: 15px;
+        border-bottom: 1px solid #80C0E4;
+        border-left: 0;
+        justify-content: center;
+        margin-right: 0;
+    }
+    
+    .questionControlGroup{
+        justify-content: center;
+    }
+
+    
+}
 

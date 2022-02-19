@@ -22,14 +22,14 @@ export const QuestionScreen = () => {
                     <span className={styles.categoryName}>Выберите один из вариантов ответа</span>
                 </div>
                 <div className={styles.answersWrapper}>
-                    <button className={styles.answer}>Вариант 1</button>
-                    <button className={styles.answer}>Вариант 2</button>
-                    <button className={styles.answer}>Вариант 3</button>
-                    <button className={styles.answer}>Вариант 4</button>
+                    <button className={styles.answer + ' ' + styles.answers}>Вариант 1</button>
+                    <button className={styles.answer + ' ' + styles.answers}>Вариант 2</button>
+                    <button className={styles.answer + ' ' + styles.answers}>Вариант 3</button>
+                    <button className={styles.answer + ' ' + styles.answers}>Вариант 4</button>
                 </div>
                 <div className={styles.questionControlGroup}>
-                    <button className={styles.answer}>Предыдущий вопрос</button>
-                    <button className={styles.answer}>Следующий вопрос</button>
+                    <button className={styles.answer + ' ' + styles.questionControl}>Предыдущий вопрос</button>
+                    <button className={styles.answer + ' ' + styles.questionControl}>Следующий вопрос</button>
                 </div>
             </div>
         </div>
