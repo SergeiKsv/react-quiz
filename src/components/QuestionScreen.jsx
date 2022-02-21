@@ -9,7 +9,7 @@ export const QuestionScreen = () => {
         <div className={styles.QuestionScreen}>
             <div className={styles.leftInfoBlock}>
                 <div className={styles.header}>
-                    <span className={styles.categoryName}>Название категории</span>
+                    <span>Название категории</span>
                 </div>
                 <p className={styles.question}>Тут будет вопрос на много много, или не много букоф</p>
                 <div className={styles.questionsCountInfo}>
@@ -19,7 +19,7 @@ export const QuestionScreen = () => {
             </div>
             <div className={styles.rightInfoBlock}>
                 <div className={styles.header}>
-                    <span className={styles.categoryName}>Выберите один из вариантов ответа</span>
+                    <span>Выберите один из вариантов ответа</span>
                 </div>
                 <div className={styles.answersWrapper}>
                     <button className={styles.answer + ' ' + styles.answers}>Вариант 1</button>

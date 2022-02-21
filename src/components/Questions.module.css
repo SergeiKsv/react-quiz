@@ -16,7 +16,6 @@
 
 .question{
     text-align: center;
-    margin-left: 5px;
 }
 
 .questionsCountInfo{
@@ -29,7 +28,6 @@
 
 .rightInfoBlock{
     flex: auto;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -47,8 +45,6 @@
 {
     box-shadow: 0 1px 0 0  #dce1e6, 0 0 0 1px  #e7e8ec;
     background-color: #abdaf5;
-    height: 52px;
-    width: 155px;
     border-radius: 4px;
     font-family: "Comic Sans MS", "Comic Sans";
     align-self: center;
@@ -56,6 +52,8 @@
 
 .answers{
     margin-bottom: 10px;
+    height: 52px;
+    width: 155px;
 }
 .answers:last-child{
     margin-bottom: 0;
@@ -80,19 +78,22 @@
 
 .questionControl{
     margin-right: 10px;
+    height: 52px;
+    width: 155px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .header{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     height: 40px;
     background:#80C0E4;
     border-radius: 7px;
 }
 
-@media screen and (max-width:440px) {
+@media screen and (max-width:580px) {
     .QuestionScreen{
         flex-direction: column;
     }
