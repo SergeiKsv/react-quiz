@@ -46,7 +46,7 @@
     box-shadow: 0 1px 0 0  #dce1e6, 0 0 0 1px  #e7e8ec;
     background-color: #abdaf5;
     border-radius: 4px;
-    font-family: "Comic Sans MS", "Comic Sans";
+    font-family: inherit;
     align-self: center;
 }
 
