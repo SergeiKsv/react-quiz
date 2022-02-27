@@ -1,10 +1,12 @@
 import style from './App.module.css';
-import { QuestionScreen } from './components/QuestionScreen';
+import { HomeScreen } from './components/HomeScreen/HomeScreen';
+import { QuestionScreen } from './components/QuestionScreen/QuestionScreen';
 
 
 const App=()=> {
   return (
-      <QuestionScreen/>
+    //<QuestionScreen/>
+    <HomeScreen/>
   );
 }
 
