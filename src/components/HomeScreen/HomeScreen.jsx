@@ -1,63 +1,69 @@
 import { useFormik } from 'formik';
 import styles from './HomeScreen.module.css'
 import { useState, useEffect } from 'react';
+import { getData } from '../../Api';
 
 
-
-export const HomeScreen = () => {
+export const HomeScreen = (props) => {
     const [data, setData] = useState([]);
-    const [loaded,setLoaded]=useState(false);
-
-    const getData=async()=>{
-        let result =await fetch('https://opentdb.com/api_category.php');
-        result=await result.json();
-        if(result.trivia_categories) return result.trivia_categories;
-    }
-
+    const [loaded, setLoaded] = useState(false);
+    const difficulty=['easy', 'medium', 'hard'];
 
     useEffect(() => {
-        const result=getData().then(
-            items=>{
-                setData(items);
-                setLoaded(true);
-            }
-        );      
+            getData().then(
+                items => {
+                    setData(items);
+                    setLoaded(true);
+                }
+            );
     }, []);
-    
+
     const formik = useFormik({
-        enableReinitialize:true,
         initialValues: {
-            quantity: '',
-            category: data,
+            quantity: 10,
+            category: '',
             difficulty: '',
         },
-        onSubmit: () => { },
+        onSubmit: (values) => {
+            props.startGame(values.quantity,values.category,values.difficulty);
+        },
     });
-    
+
     return (
-        loaded?<div className={styles.HsWrapper}>
+        loaded ? <div className={styles.HsWrapper}>
+
             <form onSubmit={formik.handleSubmit} className={styles.formWrapper}>
                 <h1>Trivia Quiz</h1>
                 <div className={styles.variantWrapper}>
-                    <input type="text" placeholder='Number of Questions 1-50' className={styles.variants}></input>
+                    <span>Enter number of questions</span>
+                    <input type="number" max='50' min='1' placeholder='Number of Questions 1-50'
+                        name='quantity'
+                        className={styles.variants}
+                        defaultValue={formik.values.quantity}
+                        onChange={formik.handleChange}></input>
                 </div>
+
                 <div className={styles.variantWrapper}>
                     <span>Select Category</span>
-                    <select className={styles.variants}>
+                    <select className={styles.variants} onChange={formik.handleChange} name='category' required>
                         <option value="" disabled selected>Select Category</option>
-                        {formik.values.category.map(items=><option value={items.id}>{items.name}</option>)}
+                        {data.map(items => <option value={items.id}>{items.name}</option>)}
                     </select>
                 </div>
+
                 <div className={styles.variantWrapper}>
                     <span>Select Difficulty</span>
-                    <select className={styles.variants}>
+                    <select className={styles.variants} onChange={formik.handleChange} name='difficulty'>
                         <option value="" selected>All difficulties</option>
-                        <option value="Easy" >Easy</option>
-                        <option value="Medium" >Medium</option>
-                        <option value="Hard" >Hard</option>
+                        {difficulty.map(items => <option value={items}>{items}</option>)}
                     </select>
                 </div>
+
+                <div>
+                    <button className={styles.startQuizBtn} type="submit">Start Quiz</button>
+                </div>
+
             </form>
-        </div>:<div>Loading...</div>
+        </div> : <div>Loading...</div>
     );
 }

@@ -3,10 +3,13 @@
 
 body {
   background-color: #c4c4c4;
+  font-size: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 1rem;
-  font-family: 'Noto Sans', sans-serif;
 }

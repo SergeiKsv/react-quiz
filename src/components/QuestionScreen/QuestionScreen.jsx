@@ -2,16 +2,22 @@ import styles from './Questions.module.css'
 
 
 
-export const QuestionScreen = () => {
+export const QuestionScreen = (props) => {
 
-
+    let str=props.question.question.replace(/&amp;/g, '&')
+    .replace(/&ldquo;/g, '<')
+    .replace(/&rdquo;/g, '>')
+    .replace(/&rsquo;/,"'")
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'");
+    
     return (
         <div className={styles.QuestionScreen}>
             <div className={styles.leftInfoBlock}>
                 <div className={styles.header}>
-                    <span>Название категории</span>
+                    <span>{props.question.category}</span>
                 </div>
-                <p className={styles.question}>Тут будет вопрос на много много, или не много букоф</p>
+                <p className={styles.question}>{str}</p>
                 <div className={styles.questionsCountInfo}>
                     <span>Question 1 of 15</span>
                     <span>Answered questions: 0 of 15</span>
@@ -19,7 +25,7 @@ export const QuestionScreen = () => {
             </div>
             <div className={styles.rightInfoBlock}>
                 <div className={styles.header}>
-                    <span>Выберите один из вариантов ответа</span>
+                    <span>Choose the correct answer</span>
                 </div>
                 <div className={styles.answersWrapper}>
                     <button className={styles.answer + ' ' + styles.answers}>Вариант 1</button>
@@ -29,7 +35,8 @@ export const QuestionScreen = () => {
                 </div>
                 <div className={styles.questionControlGroup}>
                     <button className={styles.answer + ' ' + styles.questionControl}>Предыдущий вопрос</button>
-                    <button className={styles.answer + ' ' + styles.questionControl}>Следующий вопрос</button>
+                    <button className={styles.answer + ' ' + styles.questionControl} 
+                    onClick={()=>{props.setCurrentQuestion()}}>Следующий вопрос</button>
                 </div>
             </div>
         </div>
