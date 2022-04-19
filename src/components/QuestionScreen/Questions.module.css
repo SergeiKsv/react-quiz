@@ -40,31 +40,42 @@
     margin-top: 20px;  
 }
 
-.answer
+.pageButtons
 {
     box-shadow: 0 1px 0 0  #dce1e6, 0 0 0 1px  #e7e8ec;
     background-color: #abdaf5;
     border-radius: 4px;
     font-family: inherit;
     align-self: center;
+    border-width: 1px;
 }
 
 .answers{
     margin-bottom: 10px;
-    height: 52px;
-    width: 155px;
+    min-height: 60px;
+    width: 170px;
 }
+
+.correctAnswer{
+    background-color: #47da64;
+    border-color: #23b83e;
+}
+
+.incorrectAnswer{
+    background-color: #FF4040;
+    border-color: #B52D43;
+}
+
 .answers:last-child{
     margin-bottom: 0;
 }
-
 
 .answer:last-child{
 
     margin-right: 0;
 }
 
-.answer:hover{
+.pageButtons:hover{
     background-color: #dce1e6;
     transition:0.4s;
 }
@@ -76,9 +87,8 @@
 }
 
 .questionControl{
-    margin-right: 10px;
     height: 52px;
-    width: 155px;
+    width: 200px;
     padding-left: 10px;
     padding-right: 10px;
 }

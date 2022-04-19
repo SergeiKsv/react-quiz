@@ -28,7 +28,7 @@ export const HomeScreen = (props) => {
             props.startGame(values.quantity,values.category,values.difficulty);
         },
     });
-
+    
     return (
         loaded ? <div className={styles.HsWrapper}>
 

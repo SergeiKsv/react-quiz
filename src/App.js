@@ -13,20 +13,28 @@ const App = () => {
   const startGame = (amount, category, difficulty) => {
     getQuestions(amount, category, difficulty).then(
       items => setQuestions(items),
-      setGame(true)
+      setGame(true),
     );
-      
-      
+    
   }
   
   const setQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1);
+    if (currentQuestion >= questions.length - 1) {
+      setGame(false);
+      setCurrentQuestion(0);
+      setQuestions(0);
+    }
+    else {
+      setCurrentQuestion(currentQuestion + 1);
+    }
   }
-
   
   return (
-    isGameReady&&questions.length>0 ?
-      <QuestionScreen setCurrentQuestion={setQuestion} question={questions[currentQuestion]} /> :
+    questions.length > 0 ?
+      <QuestionScreen nextQuestion={setQuestion}
+        question={questions[currentQuestion]}
+        currentQuestion={currentQuestion}
+        questionsCount={questions.length} /> :
 
       <div className={style.wrapper}>
         <HomeScreen startGame={startGame} />
