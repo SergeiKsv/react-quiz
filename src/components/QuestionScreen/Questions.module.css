@@ -50,6 +50,10 @@
     border-width: 1px;
 }
 
+.pageButtons:disabled{
+    pointer-events: none;
+}
+
 .answers{
     margin-bottom: 10px;
     min-height: 60px;

@@ -7,8 +7,6 @@ export const QuestionScreen = (props) => {
     const [classNames, setClassName] = useState({ correctAnswer: '', incorrectAnswer: '' });
     const [display,setDisplay]=useState(true);
  
-    
-
     useEffect(() => {
         function shuffle(arr) {
             for (let i = arr.length - 1; i > 0; i--) {
