@@ -5,7 +5,9 @@ export const QuestionScreen = (props) => {
     const [correctAnswer, setAnswer] = useState(0);
     const [variants, setVariants] = useState([]);
     const [classNames, setClassName] = useState({ correctAnswer: '', incorrectAnswer: '' });
-
+    const [display,setDisplay]=useState(true);
+ 
+    
 
     useEffect(() => {
         function shuffle(arr) {
@@ -19,6 +21,7 @@ export const QuestionScreen = (props) => {
             .map(val => ({ val, isCorrect: val === props.question.correct_answer ? true : false }))));
         return () => {
             setClassName('');
+            setDisplay(true);
         };
     }, [props.question.incorrect_answers, props.question.correct_answer])
 
@@ -46,6 +49,7 @@ export const QuestionScreen = (props) => {
 
     const checkCorrectAnswer = (e) => {
         setClassName({ ...classNames, correctAnswer: styles.correctAnswer, incorrectAnswer: styles.incorrectAnswer });
+        setDisplay(false);
         if (e === true) {
             setAnswer(correctAnswer + 1);
         }
@@ -74,7 +78,7 @@ export const QuestionScreen = (props) => {
                 </div>
                 <div className={styles.questionControlGroup}>
                     <button className={styles.pageButtons + ' ' + styles.questionControl}
-                        onClick={() => { props.nextQuestion() }}>Next Question</button>
+                        onClick={() => { props.nextQuestion() }} disabled={display}>Next Question</button>
                 </div>
             </div>
         </div>

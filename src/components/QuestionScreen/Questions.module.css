@@ -59,11 +59,13 @@
 .correctAnswer{
     background-color: #47da64;
     border-color: #23b83e;
+    pointer-events: none;
 }
 
 .incorrectAnswer{
     background-color: #FF4040;
     border-color: #B52D43;
+    pointer-events: none;
 }
 
 .answers:last-child{
