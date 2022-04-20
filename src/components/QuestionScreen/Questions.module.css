@@ -76,15 +76,12 @@
     margin-bottom: 0;
 }
 
-.answer:last-child{
-
-    margin-right: 0;
-}
-
-.pageButtons:hover{
-    background-color: #dce1e6;
-    transition:0.4s;
-}
+@media (hover: hover) and (pointer: fine) {
+    .pageButtons:hover{
+        background-color: #dce1e6;
+        transition:0.4s;
+    }
+  }
 
 .questionControlGroup{
     display: flex;

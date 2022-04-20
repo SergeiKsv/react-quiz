@@ -30,15 +30,20 @@ const App = () => {
   }
   
   return (
-    questions.length > 0 ?
-      <QuestionScreen nextQuestion={setQuestion}
-        question={questions[currentQuestion]}
-        currentQuestion={currentQuestion}
-        questionsCount={questions.length} /> :
-
-      <div className={style.wrapper}>
-        <HomeScreen startGame={startGame} />
-      </div>
+    <div>
+      {
+        questions.length > 0 ?
+        <QuestionScreen nextQuestion={setQuestion}
+          question={questions[currentQuestion]}
+          currentQuestion={currentQuestion}
+          questionsCount={questions.length} /> :
+  
+        <div className={style.wrapper}>
+          <HomeScreen startGame={startGame} />
+        </div>
+      }
+    </div>
+    
 
   );
 }
