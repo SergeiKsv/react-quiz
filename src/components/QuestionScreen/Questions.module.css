@@ -1,6 +1,5 @@
 .QuestionScreen{
     display: flex;
-    margin: auto;
     padding:25px;
     background-color:#FFF;
 }
@@ -16,6 +15,7 @@
 
 .question{
     text-align: center;
+    padding: 5px;
 }
 
 .questionsCountInfo{
@@ -27,17 +27,18 @@
 }
 
 .rightInfoBlock{
-    flex: auto;
     display: flex;
+    flex: auto;
     flex-direction: column;
-    justify-content: flex-end;
 }
 
 .answersWrapper
 {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;  
+    justify-content: space-evenly;
+    margin-top: 20px;
+    flex:270px;
 }
 
 .pageButtons
@@ -103,6 +104,7 @@
     height: 40px;
     background:#80C0E4;
     border-radius: 7px;
+    padding: 5px;
 }
 
 @media screen and (max-width:580px) {

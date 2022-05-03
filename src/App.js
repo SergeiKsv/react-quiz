@@ -4,23 +4,29 @@ import { QuestionScreen } from './components/QuestionScreen/QuestionScreen';
 import { getQuestions } from './Api';
 import { useState } from 'react';
 
+const Footer=()=>{
+
+  return(
+    <div className={style.footer}>
+      блаблабла
+    </div>
+  )
+}
+
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [isGameReady, setGame] = useState(false);
 
   const startGame = (amount, category, difficulty) => {
     getQuestions(amount, category, difficulty).then(
-      items => setQuestions(items),
-      setGame(true),
+      items => setQuestions(items)
     );
     
   }
   
   const setQuestion = () => {
     if (currentQuestion >= questions.length - 1) {
-      setGame(false);
       setCurrentQuestion(0);
       setQuestions(0);
     }
@@ -30,7 +36,7 @@ const App = () => {
   }
   
   return (
-    <div>
+    <div className={style.AppWrapper}>
       {
         questions.length > 0 ?
         <QuestionScreen nextQuestion={setQuestion}
@@ -42,9 +48,8 @@ const App = () => {
           <HomeScreen startGame={startGame} />
         </div>
       }
+     <Footer/>
     </div>
-    
-
   );
 }
 
