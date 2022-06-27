@@ -1,17 +1,9 @@
 import style from './App.module.css';
 import { HomeScreen } from './components/HomeScreen/HomeScreen';
 import { QuestionScreen } from './components/QuestionScreen/QuestionScreen';
+import { Footer } from './components/Footer/Footer';
 import { getQuestions } from './Api';
 import { useState } from 'react';
-
-const Footer=()=>{
-
-  return(
-    <div className={style.footer}>
-      блаблабла
-    </div>
-  )
-}
 
 
 const App = () => {
@@ -26,12 +18,12 @@ const App = () => {
   }
   
   const setQuestion = () => {
-    if (currentQuestion >= questions.length - 1) {
+    if (currentQuestion >= questions.length-1) {
       setCurrentQuestion(0);
       setQuestions(0);
     }
     else {
-      setCurrentQuestion(currentQuestion + 1);
+      setCurrentQuestion(currentQuestion+1);
     }
   }
   

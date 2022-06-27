@@ -1,0 +1,13 @@
+.footer{
+    background:#fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3px;
+  }
+
+  .footerText{
+    font-style: italic;
+    font-size: 12px;
+    color:#999999;
+  }

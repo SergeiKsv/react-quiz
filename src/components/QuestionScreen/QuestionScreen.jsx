@@ -29,7 +29,7 @@ export const QuestionScreen = (props) => {
                 </div>
                 <p className={styles.question}>{props.question.question}</p>
                 <div className={styles.questionsCountInfo}>
-                    <span>Question {props.currentQuestion + 1} of {props.questionsCount} </span>
+                    <span>Question {props.currentQuestion+1} of {props.questionsCount} </span>
                     <span>Correct answer: {correctAnswer} of {props.questionsCount}</span>
                 </div>
             </div>

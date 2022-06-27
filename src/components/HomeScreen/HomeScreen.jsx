@@ -33,7 +33,7 @@ export const HomeScreen = (props) => {
         loaded ? <div className={styles.HsWrapper}>
 
             <form onSubmit={formik.handleSubmit} className={styles.formWrapper}>
-                <h1>Trivia Quiz</h1>
+                <h1>Simple Quiz</h1>
                 <div className={styles.variantWrapper}>
                     <span>Enter number of questions</span>
                     <input type="number" max='50' min='1' placeholder='Number of Questions 1-50'
