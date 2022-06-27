@@ -4,10 +4,10 @@ import styles from './Footer.module.css'
     return(
       <div className={styles.footer}>
         <div className={styles.footerText}>
-          <span>Source code</span>
+          <a href='https://github.com/SergeiKsv/react-quiz' target="_blank">Source code</a>
         </div>
         <div className={styles.footerText}>
-          <span>API provided by Open Trivia Database</span>
+          <a href='https://opentdb.com/' target="_blank">API provided by Open Trivia Database</a>
         </div>
       </div>
     )

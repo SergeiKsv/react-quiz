@@ -11,3 +11,7 @@
     font-size: 12px;
     color:#999999;
   }
+
+  a { color: #808080; }
+  a:visited { color: #808080; }
+  a:hover { color: #808080; }
