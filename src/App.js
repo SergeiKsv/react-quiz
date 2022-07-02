@@ -18,6 +18,7 @@ const App = () => {
     getQuestions(amount, category, difficulty).then((items) =>
       setQuestions(items)
     );
+    setScore(0);
   };
 
   const checkAnswer = (e) => {
