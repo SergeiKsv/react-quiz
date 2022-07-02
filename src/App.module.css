@@ -18,3 +18,31 @@ body,html{
   margin: auto;
 }
 
+.resultScreen{
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.playAgainButton{
+    box-shadow: 0 1px 0 0  #dce1e6, 0 0 0 1px  #e7e8ec;
+    background-color: #abdaf5;
+    border-radius: 4px;
+    font-family: inherit;
+    align-self: center;
+    height: 52px;
+    width: 155px;
+
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+  .playAgainButton:hover{
+    background-color: #dce1e6;
+    transition:0.4s;
+  }
+}

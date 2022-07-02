@@ -1,4 +1,5 @@
 import he from 'he'
+
 export const getData = async () => {
     let result = await fetch('https://opentdb.com/api_category.php');
     result = await result.json();
@@ -7,8 +8,8 @@ export const getData = async () => {
 
 export const getQuestions=async (amount,category,difficulty)=>{
     let result = 
-        await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`);
-    result=await result.json();
+        await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`); 
+   result=await result.json();
     let questions=result.results.map((results)=>({
         ...results,
         answers:shuffle([...results.incorrect_answers,results.correct_answer]
