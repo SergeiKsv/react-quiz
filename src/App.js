@@ -10,14 +10,19 @@ const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [error,setError]=useState("");
   let gameOverScreen;
   let homeScreen;
   let questionScreen;
 
-  const startGame = (amount, category, difficulty) => {
-    getQuestions(amount, category, difficulty).then((items) =>
-      setQuestions(items)
-    );
+  const startGame = async (amount, category, difficulty) => {
+    try{
+      let items= await getQuestions(amount, category, difficulty);
+      setQuestions(items);
+      setError("");
+    }catch(e){
+      setError(e.message);
+    }
     setScore(0);
   };
 
@@ -62,6 +67,7 @@ const App = () => {
     <div className={style.AppWrapper}>
       {questionScreen}
         <div className={style.wrapper}>
+          {error &&<div className={style.error}>{error}</div>}
           {homeScreen}
           {gameOverScreen}
         </div>

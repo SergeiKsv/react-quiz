@@ -9,7 +9,12 @@ export const getData = async () => {
 export const getQuestions=async (amount,category,difficulty)=>{
     let result = 
         await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`); 
-   result=await result.json();
+    result=await result.json();
+
+   if(result.response_code===1){
+       throw new Error("No results for your request");
+    }
+
     let questions=result.results.map((results)=>({
         ...results,
         answers:shuffle([...results.incorrect_answers,results.correct_answer]
